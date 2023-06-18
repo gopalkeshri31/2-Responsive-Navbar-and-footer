@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevbar No.1</title>
+    <link rel="icon" href="https://w7.pngwing.com/pngs/336/919/png-transparent-red-background-with-1-text-overlay-logo-brand-font-number-1-text-rectangle-sign-thumbnail.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            font-family: 'poppins', sans-serif;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 7%;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+            transition: .5s;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: white;
+            font-weight: 600;
+            cursor: default;
+            margin-right: 50px;
+        }
+
+        .navbar a {
+            font-size: 2rem;
+            color: white;
+            font-weight: 500;
+            margin-right: 3.5rem;
+            position: relative;
+
+        }
+
+        .navbar a:hover {
+            color: darkblue;
+            background: white;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        #menu-icon {
+            font-size: 3rem;
+            color: white;
+            display: none;
+        }
+
+        #darkmode-icon {
+            font-size: 2.5rem;
+            color: white;
+            display: block;
+            margin-right: 20px;
+        }
+
+        .btn {
+            background: white;
+            height: 30px;
+            width: 70px;
+            border-radius: 9px;
+        }
+
+        .div-btn a {
+            color: darkblue;
+            font-size: 15px;
+        }
+
+        .btn:hover,
+        .btn a:hover {
+            background: darkblue;
+            color: white;
+        }
+
+        #signicon {
+            font-size: 3rem;
+            display: none;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #icon {
+            display: flex;
+            margin-left: -100px;
+        }
+
+        #signicon:hover {
+            color: darkblue;
+            background: white;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .container-fluid {
+            background-color: aqua;
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container-fluid .box {
+            background: rgb(74, 7, 230);
+            border-radius: 10%;
+
+            height: 40rem;
+            width: 40rem;
+        }
+
+        .box-content {
+            background: rgb(163, 138, 221);
+            height: 25rem;
+            width: 25rem;
+            margin: 7.5rem;
+            border-radius: 6px;
+        }
+
+        .box-content p {
+            padding: 3rem ;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: rgb(33, 33, 116);
+            color: #ece8e8;
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            display: flex;
+            padding: 2.3rem 12.2rem;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li h3 {
+            color: #34b6dd;
+        }
+
+        .footer>div {
+            width: 22.3rem;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 1.2rem 0;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #ece8e8;
+        }
+
+        .footer-link:hover {
+            color: #1d1b1b;
+        }
+
+        @media (max-width:950px) {
+            html {
+                font-size: 8px;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 3%;
+                background: rgb(126, 124, 231);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+                display: none;
+            }
+
+            .navbar.active {
+                display: block;
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                color: white;
+            }
+
+            #signicon {
+                display: block;
+            }
+
+            .btn {
+                display: none;
+            }
+
+            .container-fluid {
+                flex-direction: column;
+            }
+
+            .footer {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .footer ul {
+                justify-content: space-around;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="div-btn">
+            <button class="btn"><a href="#"><b>Sign In</b></button></a>
+            <button class="btn"><a href="#"><b>Sign Up</b></button></a>
+        </div>
+        <div id="icon">
+            <div class="bx bx-log-in" id="signicon"></div>
+            <div class="bx bx-user-plus" id="signicon"></div>
+        </div>
+        <a href="" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contect Us</a>
+        </nav>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="box">
+                <div class="box-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit incidunt nam perspiciatis
+                        corrupti illo deserunt, accusamus provident laboriosam debitis.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit incidunt nam perspiciatis
+                        corrupti illo deserunt, accusamus provident laboriosam debitis.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-1">
+                <h3><span id="GK">PORT</span> FOLIO</h3>
+                <br>
+                <H4>THE PORTFOLIO</H4>
+            </div>
+            <div class="footer-2">
+                <ul>
+                    <li>
+                        <h3>Qucik links</h3>
+                    </li>
+                    <a class="footer-link" href="#">
+                        <li>Home</li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>About</li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>Services</li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-3">
+                <ul>
+                    <li>
+                        <h3>Social's links</h3>
+                    </li>
+                    <a class="footer-link" href="https://www.linkedin.com/in/gopal-keshri/" target="_blank">
+                        <li>linkedin</li>
+                    </a>
+                    <a class="footer-link" href="https://www.instagram.com/keshrigopal.31/" target="_blank">
+                        <li>Instagram</li>
+                    </a>
+                    <a class="footer-link" href="https://github.com/gopalkeshri" target="_blank">
+                        <li>Github</li>
+                    </a>
+                    <a class="footer-link" href="https://twitter.com/keshrigopal31" target="_blank">
+                        <li>Twitter</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-4">
+                <ul>
+                    <li>
+                        <h3>Project's links</h3>
+                    </li>
+                    <a class="footer-link" href="#">
+                        <li>Project 1</li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>Project 2 </li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>Project 3 </li>
+                    </a>
+                    <a class="footer-link" href="#">
+                        <li>Project 4 </li>
+                    </a>
+                </ul>
+            </div> 
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; Gopal Keshri | All rights reserved
+        </div>
+    </footer>
+    <!-- js start -->
+    <script>
+        window.onscroll = () => {
+            let header = document.querySelector(".header");
+            menuicon.classList.remove("bx-x");
+            navbar.classList.remove("active");
+        };
+        let menuicon = document.querySelector("#menu-icon");
+        let navbar = document.querySelector(".navbar");
+
+        menuicon.onclick = () => {
+            menuicon.classList.toggle("bx-x");
+            navbar.classList.toggle("active");
+        };
+    </script>
+</body>
+
+</html>

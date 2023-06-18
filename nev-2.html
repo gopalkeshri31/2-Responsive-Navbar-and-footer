@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ec93368b5.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="https://as1.ftcdn.net/v2/jpg/00/89/85/08/1000_F_89850847_XMDlBNzweDnjvPbkjD1PigAVScHSKKnh.jpg">
+    <title>Nevbar No.2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .dark-mode {
+            background: black;
+            color: white;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background: white;
+            color: black;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 7%;
+            background: blue;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            transition: .5s;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: white;
+            font-weight: 600;
+            cursor: default;
+            margin-right: auto;
+        }
+
+        .navbar a {
+            font-size: 2rem;
+            color: white;
+            font-weight: 500;
+            margin-right: 3.5rem;
+            position: relative;
+
+        }
+
+        .navbar a:hover {
+            color: darkblue;
+            
+        }
+
+        #menu-icon {
+            font-size: 3rem;
+            color: white;
+            display: none;
+        }
+
+        #darkmode-icon {
+            font-size: 2.5rem;
+            color: white;
+            display: block;
+            margin-right: 20px;
+        }
+
+        .container-fluid {
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container-fluid .box {
+            background: rgb(74, 7, 230);
+            border-radius: 10%;
+
+            height: 40rem;
+            width: 40rem;
+        }
+
+        .box-content {
+            background: rgb(163, 138, 221);
+            height: 25rem;
+            width: 25rem;
+            margin: 7.5rem;
+            border-radius: 6px;
+        }
+
+        .box-content p {
+            padding: 3rem;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 7%;
+            background: blue;
+        }
+
+        .footer-text p {
+            font-size: 1.6rem;
+            color: white;
+
+        }
+
+        .foteer-icon-top a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            border-radius: .8rem;
+            background: white;
+            border: .2rem solid blue;
+            color: blue;
+            outline: .2rem solid transparent;
+            transition: .5s ease;
+
+        }
+
+        .foteer-icon-top a:hover {
+            outline-color: var(--white-color);
+
+        }
+
+        .foteer-icon-top a i {
+            font-size: 2.4rem;
+            color: #333;
+
+        }
+
+        @media (max-width:950px) {
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 3%;
+                background: rgb(126, 124, 231);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+                display: none;
+            }
+
+            .navbar.active {
+                display: block;
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                color: white;
+            }
+
+            .container-fluid {
+                flex-direction: column;
+            }
+
+            .footer {
+                padding: 2rem 3%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contect Us</a>
+        </nav>
+        <div class="bx bx-moon" id="darkmode-icon"></div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <main class="content">
+        <div class="container-fluid">
+            <div class="box">
+                <div class="box-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit incidunt nam perspiciatis
+                        corrupti illo deserunt, accusamus provident laboriosam debitis.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit incidunt nam perspiciatis
+                        corrupti illo deserunt, accusamus provident laboriosam debitis.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <hr>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Cpoyright &copy; 2023 By Gopal Keshri | All Right Reserved</p>
+        </div>
+
+        <div class="foteer-icon-top">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+    <script>
+        // menu bar Responsive code 
+        window.onscroll = () => {
+            let header = document.querySelector(".header");
+            menuicon.classList.remove("bx-x");
+            navbar.classList.remove("active");
+        };
+        let menuicon = document.querySelector("#menu-icon");
+        let navbar = document.querySelector(".navbar");
+
+        menuicon.onclick = () => {
+            menuicon.classList.toggle("bx-x");
+            navbar.classList.toggle("active");
+        };
+        // menu bar Responsive code end
+
+        // dark-mode code 
+        let darkmode = document.getElementById('darkmode-icon');
+
+        darkmode.onclick = () => {
+            darkmode.classList.toggle("bx-sun");
+            document.body.classList.toggle("dark-mode");
+        }
+
+        //dark-mode code end
+    </script>
+</body>
